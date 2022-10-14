@@ -16,7 +16,7 @@ export interface Store {
   isFeatured: boolean;
   isRefundable: boolean;
   cost: number;
-  occurences: number;
+  occurrences: number;
   isNew: boolean;
 }
 

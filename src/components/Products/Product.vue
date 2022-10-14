@@ -11,22 +11,26 @@ const {product} = defineProps<Props>();
 <template>
   <div class="card">
     <img
-        v-bind:src="product.item.images.featured"
-        alt="Missing picture"
+        v-bind:src="product.item.images.icon"
+        alt="@/img/icons/favicon-16x16.png"
         style="width: 100%"
     />
     <p class="price">${{product.store.cost}}</p>
     <h1>{{product.item.name}}</h1>
-    <p><button>Add to cart</button></p>
+    <p><button @click="addToCart({product})">Add to cart</button></p>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue";
+import {mapActions}      from "vuex";
 
 export default defineComponent(
     {
-      name: "Product"
+      name: "Product",
+      methods: {
+        ...mapActions(['addToCart'])
+      }
     }
 )
 </script>

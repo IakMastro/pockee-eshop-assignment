@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div style="padding-top: 2rem" class="home">
     <h1>Welcome back, {{`${user.name} ${user.surname}`}}!</h1>
 
     <section class="user-info">
